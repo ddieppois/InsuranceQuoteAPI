@@ -1,7 +1,16 @@
 package com.insurancequoteapi.InsuranceQuoteAPI.models;
 
-public record InsuranceQuoteRequest(String referenceNumber, int age, String email, String fullName, String birthDate,
-                                    String category, String make, String model, int year, String drivingExperience,
-                                    String atFaultAccident, String claimsNumber, String annualMileage,
-                                    String previousInsurance, double price) {
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
+
+@Valid
+public record InsuranceQuoteRequest(@NotNull String referenceNumber, @NotNull @PositiveOrZero int age,
+                                    @NotNull @Email String email, @NotNull String fullName, @NotNull String birthDate,
+                                    @NotNull String category, @NotNull String make, @NotNull String model,
+                                    @NotNull int year, @NotNull String drivingExperience,
+                                    @NotNull String atFaultAccident, @NotNull String claimsNumber,
+                                    @NotNull String annualMileage,
+                                    @NotNull String previousInsurance, @NotNull @PositiveOrZero double price) {
 }
