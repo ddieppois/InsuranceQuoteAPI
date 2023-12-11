@@ -14,7 +14,7 @@ public class InsuranceQuoteService {
     private static Double BASE_PREMIUM = 2000.00;
     private static Double INVALID_FACTOR = -1.0;
 
-    private Double getAgeFactor(int age) throws PremiumCalculationException {
+    public Double getAgeFactor(int age) throws PremiumCalculationException {
         if (age < 25) {
             return 1.3;
         } else if (age >= 25 && age < 40) {
@@ -26,9 +26,8 @@ public class InsuranceQuoteService {
         }
     }
 
-    private Double getCarValueFactor(double price, int carYear) throws PremiumCalculationException {
+    public Double getCarValueFactor(double price, int carYear) throws PremiumCalculationException {
         int currentYear = Year.now().getValue();
-        ;
         int age = currentYear - carYear;
         double depreciationRate = 0.0;
         if (age <= 3) {

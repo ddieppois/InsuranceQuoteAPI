@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "2a854754-76b2-45cf-8544-c27437356609",
+		"name": "InsuranceQuote",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4919115"
+	},
+	"item": [
+		{
+			"name": "Calculate quote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "QUOTE2023KEY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"referenceNumber\": \"AB12\",\r\n  \"age\": 25,\r\n  \"email\": \"test@email.com\",\r\n  \"fullName\": \"fullName\",\r\n  \"birthDate\": \"birthDate\",\r\n  \"category\": \"category\",\r\n  \"make\": \"make\",\r\n  \"model\": \"model\",\r\n  \"year\": 2022,\r\n  \"drivingExperience\": \"5-10 years\",\r\n  \"atFaultAccident\": \"1\",\r\n  \"claimsNumber\": \"0\",\r\n  \"annualMileage\": \"20,000-30,000 km\",\r\n  \"previousInsurance\": \"> 2 years\",\r\n  \"price\": 40000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/insurance-quote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"insurance-quote"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
